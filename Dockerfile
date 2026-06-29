@@ -1,5 +1,7 @@
 FROM python:3.12-slim
 
+ENV PYTHONUNBUFFERED=1
+
 # ffmpeg is needed by yt-dlp to merge separate video/audio streams
 RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg && rm -rf /var/lib/apt/lists/*
 
